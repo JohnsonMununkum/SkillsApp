@@ -11,14 +11,17 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
+//firebase services
+const firebaseApp = initializeApp(environment.firebaseConfig);
+const auth = getAuth(firebaseApp);
+
+console.log('Firebase app initialized:', firebaseApp);
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    //firebase services
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
 });
