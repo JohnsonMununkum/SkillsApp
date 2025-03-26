@@ -1,0 +1,101 @@
+//content styling 
+  ion-content {
+    --background: transparent;
+  }
+
+  //made the background of the page blue
+  .page-container{
+    background-color: blue;
+
+  }
+  
+  //form styling for the registration container
+  .register-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    max-width: 450px;
+    width: 90%;
+    margin: 2rem auto;
+    margin-top: 100px;
+  }
+
+  //styling for title in the form
+  .title {
+    font-weight: 700; 
+    text-align: center;
+    margin-bottom: 2rem; 
+    color: #2c3e50;
+    font-size: 1.5rem;
+  }
+  
+    //button styling
+  ion-button {
+    --background: #2980b9;
+    --background-activated: #21618c;
+    --color: white;
+    --border-radius: 8px;
+    text-transform: none;
+    font-weight: 500;
+  }
+  
+    //item styling
+  ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: transparent;
+    --border-color: #a9a9a9;
+    --border-style: solid;
+    --border-width: 0 0 1px 0;
+  }
+  
+    //input styling
+  ion-input {
+    --color: #2c3e50;
+    --placeholder-color: #7f8c8d;
+  }
+
+    //label styling
+  ion-label {
+    color: #687484;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+    //text styling
+  ion-text[color="danger"] {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+  }
+  
+  //button styling
+  ion-button {
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+    text-transform: none;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    
+    &.primary {
+      --background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      --background-activated: linear-gradient(135deg, #5a0faf 0%, #1d5bab 100%);
+    }
+    
+    &[fill="clear"] {
+      --color: #687484;
+      --color-activated: #333;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  // responsive adjustments
+  @media (max-width: 600px) {
+    .register-container {
+      padding: 1rem;
+      max-width: 100%;
+    }
+  }
