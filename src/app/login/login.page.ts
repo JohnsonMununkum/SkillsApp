@@ -43,8 +43,8 @@ export class LoginPage implements OnInit {
     try {
       const userCredential = await signInWithEmailAndPassword(
         this.auth,
-        this.email,
-        this.password
+        email,
+        password
       );
       console.log('Logged in:', userCredential.user?.email);
       this.router.navigate(['/home']);
