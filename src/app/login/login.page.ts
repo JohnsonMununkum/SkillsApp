@@ -16,6 +16,7 @@ import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class LoginPage implements OnInit {
+  //form group declaration
   loginForm!: FormGroup;
   //variables
   email: string = '';
@@ -25,10 +26,17 @@ export class LoginPage implements OnInit {
   //and for the router for navigation
   constructor(
     private auth: Auth,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) { }
 
   async login() {
+    //if form isnt filled out properly ouput to the console
+    if (this.loginForm.invalid) {
+      console.error('Please fill in the form correctly.');
+      return;
+    }
+    const { email, password } = this.loginForm.value;
     //gets the users email and password input
     //if correct user is logged in
     //and is then navigated to the home page
@@ -47,7 +55,12 @@ export class LoginPage implements OnInit {
   }
   
   
+  //validators for the form
   ngOnInit() {
+    this.loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
 
