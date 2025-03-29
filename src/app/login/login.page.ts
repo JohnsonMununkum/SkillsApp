@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule,FormGroup} from '@angular/forms';
+//added imports for the form
+import { FormsModule,FormGroup,FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 //for authentication login through firebase
 //router for navigation
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class LoginPage implements OnInit {
   loginForm!: FormGroup;
