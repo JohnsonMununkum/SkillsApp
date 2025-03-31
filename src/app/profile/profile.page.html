@@ -4,10 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- profile card for profilecardcomponent -->
+  <app-profile-card [user]="user"></app-profile-card>
+  
+  <!-- button that allows user to edit their details -->
+  <ion-button expand="block" (click)="editProfile()">
+    Edit Profile
+  </ion-button>
 </ion-content>
